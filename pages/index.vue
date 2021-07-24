@@ -6,7 +6,7 @@
     <comp-partners id="partners" class="partners" />
     <comp-client id="client" />
     <comp-footer id="footer" class="footer" @scrollTop="gotoTop" />
-    <div class="footer-scroll">
+    <div v-if="displayScrollTop" class="footer-scroll">
       <img src="~assets/images/footer-scrolltop.png" class="img-scroll img-fluid" @click="gotoTop">
       <br>
       Top
@@ -33,6 +33,7 @@ export default {
   },
   data () {
     return {
+      displayScrollTop: false,
       menus: [
         {
           title: 'ABOUT US',
@@ -111,12 +112,14 @@ export default {
   },
   beforeMount () {
     window.addEventListener('resize', this.changeSize)
+    window.addEventListener('scroll', this.handleScroll)
   },
   mounted () {
     this.changeSize()
   },
   destroyed () {
     window.removeEventListener('resize', this.changeSize)
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     changeSize (e) {
@@ -125,6 +128,13 @@ export default {
         this.$store.dispatch('changeSize', true)
       } else {
         this.$store.dispatch('changeSize', false)
+      }
+    },
+    handleScroll () {
+      if (window.scrollY > 300) {
+        this.displayScrollTop = true
+      } else {
+        this.displayScrollTop = false
       }
     },
     gotoTop () {

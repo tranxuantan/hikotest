@@ -29,7 +29,6 @@ export default {
   },
   methods: {
     clickMenu () {
-      console.log('abc')
       this.$emit('clickMenu')
     }
   }

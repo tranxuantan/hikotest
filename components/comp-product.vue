@@ -117,6 +117,7 @@ export default {
         transform: translate(-50%,-50%);
         color: white;
         font-size: 135%;
+        white-space: nowrap;
       }
     }
     .item-desc{

@@ -38,9 +38,9 @@
               </div>
             </div>
           </div>
-          <div v-if="isMobile" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div v-for="(product, index) in products" :key="index" class="carousel-item product-item col-12" :class="index==0 ? 'active' : ''">
+          <div v-else class="col-12 container mt-5">
+            <carousel :per-page="1.5" :mouse-drag="false">
+              <slide v-for="(product, index) in products" :key="index" class="product-item">
                 <img :src="require(`~/assets/images/${product.productImage}`)" class="w-100 mb-4">
                 <div class="item-button-name mb-4">
                   <img src="~assets/images/product-name.png" class="w-100" alt="">
@@ -55,18 +55,8 @@
                     product.productDesc
                   }}
                 </div>
-              </div>
-            </div>
-            <ol class="carousel-indicators">
-              <li
-                v-for="(product, index) in products"
-                :key="index"
-                data-target="#carouselExampleIndicators"
-                :data-slide-to="index"
-                class="carousel-indicators-li"
-                :class="index==0 ? 'active' : ''"
-              />
-            </ol>
+              </slide>
+            </carousel>
           </div>
         </div>
       </div>
@@ -75,7 +65,6 @@
 </template>
 
 <script>
-
 export default {
   props: {
     products: {
@@ -109,9 +98,9 @@ export default {
   position: relative;
   background-color: #15161e;
   background: url("./assets/images/product-background.png") no-repeat;
-  background-size: contain;
-  padding-top: 15rem;
-  padding-bottom: 30rem;
+  background-size: 100% 100%;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
   .content-text {
     margin-bottom: 10rem;
   }
@@ -147,18 +136,13 @@ export default {
       margin-bottom: 0;
     }
     .product-item {
-      height: 620px;
-    }
-    .carousel-indicators {
-      position: static;
-      .carousel-indicators-li {
-        height: 10px;
-        width: 10px;
-        transform: rotate(45deg);
-        margin: 10px;
+      .item-button-name {
+        .item-name {
+          font-size: 90%;
+        }
       }
-      .carousel-indicators-li.active {
-        background-color: red;
+      .item-desc{
+        padding: 0;
       }
     }
   }
@@ -166,11 +150,16 @@ export default {
 
 @media (max-width: 375px) {
   .content {
-    padding-bottom: 2.7rem;
+    padding-bottom: 8.5rem;
     background-repeat: repeat;
-    .product-item {
-      height: 550px;
-    }
   }
+}
+::v-deep .VueCarousel-dot {
+  border-radius: 0;
+  transform: rotate(45deg);
+  background-color: #505153 !important;
+}
+::v-deep .VueCarousel-dot--active {
+  background-color: #f41616 !important;
 }
 </style>

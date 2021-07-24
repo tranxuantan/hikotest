@@ -53,11 +53,6 @@
             {{ copyright }}
           </div>
         </div>
-        <div class="footer-scroll">
-          <img src="~assets/images/footer-scrolltop.png" class="img-scroll img-fluid" @click="scrollTop">
-          <br>
-          Top
-        </div>
       </div>
     </div>
   </footer>
@@ -76,11 +71,6 @@ export default {
     isMobile () {
       return this.$store.getters.isMobile
     }
-  },
-  methods: {
-    scrollTop () {
-      this.$emit('scrollTop')
-    }
   }
 }
 </script>
@@ -88,6 +78,7 @@ export default {
 <style lang="scss" scoped>
 .content {
   background-image: url("./assets/images/footer-background.png");
+  background-size: 100% 100%;
   background-color: #15161e;
   color: white;
   padding-top: 30rem;
@@ -106,17 +97,6 @@ export default {
   }
   .footer-horizontal{
     border-top: solid 0.01rem #222330;
-  }
-  .footer-scroll {
-    position: absolute;
-    color: white;
-    bottom: 20%;
-    right: -5%;
-    text-align: center;
-  }
-  .img-scroll {
-    height: 25px;
-    cursor: pointer;
   }
 }
 @media (max-width: 768px) {
@@ -139,10 +119,6 @@ export default {
     }
     .footer-license {
       margin-top: 3rem;
-    }
-    .footer-scroll {
-      bottom: 13%;
-      right: 8%;
     }
   }
 }

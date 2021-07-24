@@ -9,7 +9,7 @@
           <div class="collapse navbar-collapse">
             <div class="d-flex justify-content-center w-100">
               <ul class="navbar-nav">
-                <li v-for="(menu,index) in menus" :key="index" class="nav-item ml-3 mr-3">
+                <li v-for="(menu,index) in menus" :key="index" class="nav-item mr-3">
                   <nuxt-link :to="{ path: menu.url, hash: menu.anchor}" class="nav-link text-white">
                     {{ menu.title }}
                   </nuxt-link>
@@ -36,7 +36,7 @@
           </button>
         </div>
       </nav>
-      <img src="~assets/images/header-banner.png" class="img-fluid">
+      <img src="~assets/images/header-banner.png" class="w-100">
       <div class="header-title">
         CASINO<br>PLAYGAME
       </div>

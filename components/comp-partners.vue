@@ -1,27 +1,33 @@
 <template>
   <section>
     <div class="content">
-      <div class="col-12 col-lg-6 float-right">
-        <p class="title col-12 col-md-8">
-          {{ title }}
-        </p>
-        <p class="subtitle col-12 col-md-8">
-          {{ subtitle }}
-        </p>
-        <p class="description col-12 col-md-8">
-          {{ description }}
-        </p>
-        <div class="col-12 col-md-8">
-          <div class="d-flex justify-content-center row">
-            <div v-for="(partner, index) in partnersList" :key="index" class="col-4">
-              <img :src="require(`~/assets/images/${partner}`)" class="w-100" :alt="partner">
+      <div class="container">
+        <div class="row d-flex flex-row-reverse">
+          <div class="col-12 col-md-6 partners-content-right">
+            <div>
+              <p class="title">
+                {{ title }}
+              </p>
+              <p class="subtitle">
+                {{ subtitle }}
+              </p>
+              <p class="description">
+                {{ description }}
+              </p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-center row">
+                <div v-for="(partner, index) in partnersList" :key="index" class="col-4">
+                  <img :src="require(`~/assets/images/${partner}`)" class="w-100" :alt="partner">
+                </div>
+              </div>
             </div>
           </div>
+          <div class="col-12 col-md-6 float-right partners-wrapper-left">
+            <!-- <img src="~assets/images/partners-wapper.png" class="wapper-image"> -->
+            <img src="~assets/images/partners-image.png" class="partners-image ">
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-md-6 float-right partners-wrapper-left">
-        <img src="~assets/images/partners-wapper.png" class="wapper-image">
-        <img src="~assets/images/partners-image.png" class="partners-image ">
       </div>
     </div>
   </section>
@@ -48,6 +54,10 @@ export default {
 
 <style lang='scss' scoped>
 .content{
+  background-color: #15161e;
+  background: url("./assets/images/partners-wapper.png") no-repeat;
+  background-size: auto 100%;
+  padding-bottom: 13rem;
   .wapper-image{
     width: 90%;
   }
@@ -55,10 +65,10 @@ export default {
     position: relative;
   }
   .partners-image {
-    width: 60%;
+    width: 100%;
     position: absolute;
-    right: 10%;
-    transform: translate(0%, 25%);
+    top: 25%;
+    left: -10%;
   }
   .title {
     padding-top: 12rem;
@@ -69,20 +79,28 @@ export default {
 }
 @media (max-width: 768px) {
   .content {
+    padding-bottom: 0;
     text-align: center;
-    .title {
+    background-size: 90%;
+    background-position-y: bottom;
+    .partners-content-right {
+      margin-bottom: 5rem;
+      .title {
       padding-top: 4rem;
-    }
-    .description {
-      margin-bottom: 3rem;
-    }
-    .wapper-image{
-      margin-top: 3rem;
-      width: 100%;
+      }
+      .description {
+        margin-bottom: 3rem;
+      }
+      .wapper-image{
+        margin-top: 3rem;
+        width: 100%;
+      }
     }
     .partners-image {
       width: 90%;
-      right: 0;
+      position: static;
+      left: 5%;
+      padding-top: 0;
     }
   }
 }

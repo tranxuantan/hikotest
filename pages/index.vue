@@ -6,6 +6,11 @@
     <comp-partners id="partners" class="partners" />
     <comp-client id="client" />
     <comp-footer id="footer" class="footer" @scrollTop="gotoTop" />
+    <div class="footer-scroll">
+      <img src="~assets/images/footer-scrolltop.png" class="img-scroll img-fluid" @click="gotoTop">
+      <br>
+      Top
+    </div>
   </div>
 </template>
 
@@ -150,16 +155,27 @@ export default {
   background-color: #15161e;
   color: white;
   .partners {
-    margin-bottom: 60rem;
+    margin-bottom: 10rem;
   }
   .footer {
     margin-top: -10rem;
+  }
+  .footer-scroll {
+    position: fixed;
+    color: white;
+    bottom: 5%;
+    right: 5%;
+    text-align: center;
+  }
+  .img-scroll {
+    height: 25px;
+    cursor: pointer;
   }
 }
 @media (max-width: 768px) {
   .langding {
     .partners {
-      margin-bottom: 50rem;
+      margin-bottom: 5rem;
     }
     .footer {
       margin-top: 0rem;

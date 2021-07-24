@@ -108,7 +108,7 @@ export default {
 .content{
   position: relative;
   background-color: #15161e;
-  background: url(/_nuxt/assets/images/product-background.png) no-repeat;
+  background: url("./assets/images/product-background.png") no-repeat;
   background-size: contain;
   padding-top: 15rem;
   padding-bottom: 30rem;

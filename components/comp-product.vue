@@ -121,6 +121,7 @@ export default {
       position: relative;
       text-align: center;
       .item-name {
+        font-family: Raleway;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -130,6 +131,7 @@ export default {
       }
     }
     .item-desc{
+      font-family: Mulish;
       color: white;
       padding: 0 1rem;
       text-align: center;
@@ -139,6 +141,7 @@ export default {
 @media (max-width: 768px) {
   .content {
     padding-top: 5rem;
+    padding-bottom: 5rem;
     text-align: center;
     .content-text {
       margin-bottom: 0;
@@ -163,7 +166,7 @@ export default {
 
 @media (max-width: 375px) {
   .content {
-    padding-bottom: 4.2rem;
+    padding-bottom: 2.7rem;
     background-repeat: repeat;
     .product-item {
       height: 550px;

@@ -137,9 +137,9 @@ export default {
         if (window.pageYOffset >= product.$el.offsetTop) {
           clearInterval(interval)
         } else {
-          window.scrollBy(0, 10)
+          window.scrollBy(0, 100)
         }
-      }, 1)
+      }, 10)
     }
   }
 }

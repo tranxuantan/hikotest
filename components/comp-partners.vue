@@ -12,7 +12,7 @@
           {{ description }}
         </p>
         <div class="col-12 col-md-8">
-          <div class="row d-flex justify-content-center">
+          <div class="d-flex justify-content-center row">
             <div v-for="(partner, index) in partnersList" :key="index" class="col-4">
               <img :src="require(`~/assets/images/${partner}`)" class="w-100" :alt="partner">
             </div>

@@ -12,12 +12,20 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/bplay.png' },
       {
         rel: 'stylesheet',
         type: 'text/css',
         href:
           'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
+      },
+      {
+        rel: 'stylesheet',
+        href: '//fonts.googleapis.com/css?family=Raleway'
+      },
+      {
+        rel: 'stylesheet',
+        href: '//fonts.googleapis.com/css?family=Mulish'
       }
     ],
     script: [

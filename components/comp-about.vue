@@ -20,7 +20,8 @@
           </div>
         </div>
       </div>
-      <img src="~assets/images/about-maps.png" class="img-maps w-100">
+      <img v-if="!isMobile" src="~assets/images/about-maps.png" class="img-maps w-100">
+      <img v-else src="~assets/images/about-maps-mobile.png" class="img-maps w-100">
       <div class="banner">
         <img src="~assets/images/about-banner.png" class="w-100">
         <div class="title-banner">
@@ -43,6 +44,11 @@ export default {
       description: `BPlay was founded in 2015 by a group of highly skilled professionals with over 15 years of experience in the iGaming industry. 
       Today we are an international company with more than 100 employees and have operations in Malta, Ukraine, Romania, Norway, India, Myanmar and Taiwan...`,
       year: 15
+    }
+  },
+  computed: {
+    isMobile () {
+      return this.$store.getters.isMobile
     }
   }
 }
@@ -92,6 +98,7 @@ export default {
 }
 @media (max-width: 768px) {
   .content {
+    padding-top: 4rem;
     .img-maps {
       margin-top: 0px;
       margin-bottom: 0px;

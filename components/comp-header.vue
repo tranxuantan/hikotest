@@ -44,7 +44,7 @@
       <div class="header-scroll">
         Scroll
         <br>
-        <img src="~assets/images/header-scroll.png" class="img-scroll img-fluid">
+        <img src="~assets/images/header-scroll.png" class="img-scroll img-fluid" @click="scrollDown">
       </div>
     </div>
   </header>
@@ -58,6 +58,11 @@ export default {
       default: () => {
         return []
       }
+    }
+  },
+  methods: {
+    scrollDown () {
+      this.$emit('scrollDown')
     }
   }
 }
@@ -116,6 +121,22 @@ export default {
     .img-scroll {
       height: 25px;
       cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: static;
+      .navbar-toggler-icon {
+        background-image: url('./assets/images/header-menu.png');
+      }
+      .navbar-toggler {
+        color: white;
+        border: none;
+      }
     }
   }
 }

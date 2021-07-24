@@ -2,16 +2,16 @@
   <section id="client">
     <div class="content">
       <div class="container">
-        <div class="col-12 row">
-          <p class="title offset-4 col-4 text-center">
-            BPLAY GAME
+        <div class="row">
+          <p class="title col-12 text-center">
+            {{ title }}
           </p>
-          <p class="subtitle offset-4 col-4 text-center">
-            OUR CLIENTS
+          <p class="subtitle col-12 text-center">
+            {{ subtitle }}
           </p>
-          <div class="row d-flex justify-content-center">
-            <div v-for="(client, index) in clientList" :key="index" class="col-2dot4">
-              <img :src="require(`~/assets/images/${client}`)" class="w-100 mb-5">
+          <div class="p-3 row d-flex justify-content-center">
+            <div v-for="(client, index) in clientList" :key="index" class="col-4 col-md-2dot4">
+              <img :src="require(`~/assets/images/${client}`)" class="w-100 img-client">
             </div>
           </div>
         </div>
@@ -24,6 +24,8 @@
 export default {
   data () {
     return {
+      title: 'BPLAY GAME',
+      subtitle: 'OUR CLIENTS',
       clientList: [
         'client-9.png',
         'client-12.png',
@@ -44,7 +46,12 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-// .content {
-//   padding-top: 10rem;
-// }
+.img-client {
+  margin-bottom: 5rem;
+}
+@media (max-width: 768px) {
+  .img-client {
+    margin-bottom: 2rem;
+  }
+}
 </style>

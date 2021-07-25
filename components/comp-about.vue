@@ -13,7 +13,7 @@
               {{ subtitle }}
             </p>
           </div>
-          <div class="col-12 text-center">
+          <div class="col-12 col-md-8 text-center">
             <p class="description">
               {{ description }}
             </p>

@@ -209,6 +209,7 @@ export default {
     background: white;
     border-radius: 100%;
     width: 20px;
+    vertical-align: sub;
   }
   .img-down {
     float: right;
